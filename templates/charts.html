@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Financial Plot</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="https://unpkg.com/simple-statistics@5.0.0/dist/simple-statistics.min.js"></script>
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.6.3/papaparse.js"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      background-color: unset;
+      color:black;
+    }
+/* table {
+    border-collapse: collapse;
+    width: 100%;
+} */
+
+th, td {
+    text-align: left;
+    color:black;
+    padding: 8px;
+}
+tbody>tr:nth-child(even){background-color: #BDBDBD !important}
+tbody>tr:nth-child(odd){background-color: #fff !important}
+/* th {
+  background-color: #2f3439;
+  color: white;
+} */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron" style="background-color: #FCF3CF;">
+
+        <div class="row">
+          <div class="col-md-10">
+            <h2>
+              Financial Report            
+              <p id="report-date" style="float: right;">2019</p>
+            </h2>
+                </div>
+          </div>
+        <h4 id="ticker-id">{{ ticker }}</h4>
+        <h4 id="company-name">{{ ticker}}</h4>
+
+        <div class="row">
+          <div class="col-xs-12  col-md-9">
+            <div id="plot">
+              <!-- We append our chart here. -->
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+
+      
+<!--      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-body" style="background-color: #CEF6EC;">
+            <strong>Stock Performance</strong>
+            <p id="cost-shares"></p>
+            <p id="cost-value"></p>
+          </div>
+        </div>
+      </div> 
+      <div class="col-md-12">
+        <div id="plot"></div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <table id="summary-table" class="table table-striped table-inverse">
+          <thead stype="background-color = #08298A;">
+            <tr>
+              <th style="color: white;">Date</th>
+              <th style="color: white;">Open</th>
+              <th style="color: white;">High</th>
+              <th style="color: white;">Low</th>
+              <th style="color: white;">Close</th>
+              <th style="color: white;">Volume</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>-->
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+</body>
+
+</html>
